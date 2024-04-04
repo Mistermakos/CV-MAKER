@@ -1,0 +1,41 @@
+Database:
+	SQL (MariaDB)
+	Table Data:
+		- First_Name not null, text
+		- Last_Name not null, text
+		- Photo not null, Largeblob
+		- Phone not null, only for polish numbers so  
+		Mask would look like: +48-___-___-___
+		- Mail not null text
+		@ and .  required
+		- Adress not null text
+		- Additional info not null text
+	Table Employment:
+		- Start_Date (month_year)/text
+		- End_Date text (because of "Present")
+		- Role_title text
+		- Company text
+		- Responsibilities text
+	Table Courses and Academic history:
+		- Start_Date text
+		- End_Date text
+		- Insitution text
+		- Qualifications text
+		- Additional_info text
+	Table Skills:
+		- Skill text
+	Table Tech_skills:
+		- Name text
+		- Description text
+	Table Additional info:
+		- Add_i text
+	Table Summary:
+		- Summary text
+	Table Social_Links: 
+		- Name enum("youtube", "linkedin", "instagram", "facebook", "github")
+
+Site:
+	Form:
+		couple pages long, 1 table = 1 page of form, when user will fill everything and aprove it,
+		Program will create pdf file, and send it to him, while presenting how file will look like.
+		Most popular answers will be recomended and by clicking tab program will fill it for you.
