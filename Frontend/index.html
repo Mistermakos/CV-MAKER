@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>CV Generator App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form method="POST" action="/">
-        <input name="Name" type="text"/>
-        <input name="age" type="number"/>
-        <input type="submit"/>
-    </form>
+    <header>
+        <h1>CV Generator App</h1>
+        Fill all of the fields
+    </header>
+    <main>
+        <div id="basic-info">
+            <label for="input-file" id="drop-area">
+                <input type="file" accept="image/*" id="input-file" hidden>
+                <!-- prez to image/* przeglądarka akceptuje tylko zdjęcia-->
+                <img src="icon.png">
+            </label>
+            <div id="first-last-name">
+                <h2>Intro details</h2>
+                <span>First name</span>
+                <input type="text" placeholder="Enter your first name">
+                <span>Last name</span>
+                <input type="text" placeholder="Enter your last name">
+            </div>
+            <div id="contact">
+                <h2>Contact details</h2>
+                <div><img src="phone.png"> <input type="text" placeholder="Enter phone number"></div>
+                <div><img src="mail.png"> <input type="text" placeholder="Enter email"></div>
+                <div><img src="adress.png"> <input type="text" placeholder="Enter adress"></div>
+            </div>
+        </div>
+
+        <div id="employment">
+            <div id="company">
+                <h2>Jobs</h2>
+                <span id="company-span">Company</span>
+                <input type="text" placeholder="Enter company name">
+                <span id="company-span">Job title</span>
+                <input type="text" placeholder="Enter job title">
+            </div>
+            <div id="start-end-date">
+                <span id="company-span">Start date</span>
+                <input type="date">
+                <span id="company-span">End date</span>
+                <input type="date">
+            </div>
+            <div id="responsibilities">
+                <span id="company-span">Responsibilities</span>
+                <textarea cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div id="add-btn">
+            <button onclick="addResp()">+</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
