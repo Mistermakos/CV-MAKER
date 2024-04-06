@@ -6,8 +6,9 @@ import {CV_Create} from "./Controllers/CV_Create_Controller.js"
 
 const router = express.Router();
 
-router.get("/", await Main_Page_Get)
-router.post("/", await Main_Page_Post)
+router.route("/")
+ .get(await Main_Page_Get)
+ .post(await Main_Page_Post)
 router.get('/CV', await CV_Create)
 router.get("*", await Redirect_Main)
 
