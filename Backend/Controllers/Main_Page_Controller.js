@@ -16,18 +16,3 @@ export const Main_Page_Get = async  (req,res) =>
     }
 }
 
-export const Main_Page_Post = async (req,res) => 
-{
-    try
-    {
-        console.log(req.body)
-        res.redirect("/CV");
-    }
-    catch(err)
-    {
-        console.log(err);
-        res.send(err)
-    }
-}
-
-

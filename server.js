@@ -7,12 +7,12 @@ const app = express();
 
 //Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/",express.static("./Frontend"))
 app.use(express.json());
 app.use("/",router);
-app.use("/",express.static("./Frontend"))
 
 app.listen(process.env.PORT, () =>
-  console.log('Example app listening on port 3000!'),
+  console.log(`Example app listening on port http://localhost:${process.env.PORT}/`),
 );
 
 // https://www.npmjs.com/package/pdf-creator-node

@@ -1,5 +1,3 @@
-Database:
-	SQL (MariaDB)
 	Table Data:
 		- First_Name not null, text
 		- Last_Name not null, text

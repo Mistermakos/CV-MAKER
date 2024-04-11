@@ -13,25 +13,25 @@
         <h1>CV Generator App</h1>
         Fill all of the fields
     </header>
-    <main>
+    <form method="POST" action="/CV">
         <div id="basic-info">
             <label for="input-file" id="drop-area">
-                <input type="file" accept="image/*" id="input-file" hidden>
+                <input type="file" accept="image/*" id="input-file" name="Zdj" hidden>
                 <!-- prez to image/* przeglądarka akceptuje tylko zdjęcia-->
                 <img src="icon.png">
             </label>
             <div id="first-last-name">
                 <h2>Intro details</h2>
                 <span>First name</span>
-                <input type="text" placeholder="Enter your first name">
+                <input type="text" placeholder="Enter your first name" name="FirstName">
                 <span>Last name</span>
-                <input type="text" placeholder="Enter your last name">
+                <input type="text" placeholder="Enter your last name" name="LastName">
             </div>
             <div id="contact">
                 <h2>Contact details</h2>
-                <div><img src="phone.png"> <input type="text" placeholder="Enter phone number"></div>
-                <div><img src="mail.png"> <input type="text" placeholder="Enter email"></div>
-                <div><img src="adress.png"> <input type="text" placeholder="Enter adress"></div>
+                <div><img src="phone.png"> <input type="text" placeholder="Enter phone number" name="Phone"></div>
+                <div><img src="mail.png"> <input type="text" placeholder="Enter email" name="Mail"></div>
+                <div><img src="adress.png"> <input type="text" placeholder="Enter adress" name="Adress"></div>
             </div>
         </div>
 
@@ -39,25 +39,26 @@
             <div id="company">
                 <h2>Jobs</h2>
                 <span id="company-span">Company</span>
-                <input type="text" placeholder="Enter company name">
+                <input type="text" name="CompanyName" placeholder="Enter company name" >
                 <span id="company-span">Job title</span>
-                <input type="text" placeholder="Enter job title">
+                <input type="text" name="JobTitle" placeholder="Enter job title">
             </div>
             <div id="start-end-date">
                 <span id="company-span">Start date</span>
-                <input type="date">
+                <input type="date" name="StartingDate">
                 <span id="company-span">End date</span>
-                <input type="date">
+                <input type="date" name="EndingDate">
             </div>
             <div id="responsibilities">
                 <span id="company-span">Responsibilities</span>
-                <textarea cols="30" rows="10"></textarea>
+                <textarea cols="30" rows="10" name="Responsibilities"></textarea>
             </div>
         </div>
         <div id="add-btn">
             <button onclick="addResp()">+</button>
         </div>
-    </main>
+        <input type="submit"/>
+    </form>
     <script src="script.js"></script>
 </body>
 
