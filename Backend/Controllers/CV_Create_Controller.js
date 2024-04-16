@@ -24,6 +24,7 @@ export const CV_Create = async (req,res) =>
 {
     try
     {  
+        const data = req.body;
         fileText =  await fs.readFile(file, 'utf8', (data) => {
             return data;
         });
