@@ -5,7 +5,7 @@ const dirname = path.resolve();
 export const Main_Page_Get = async  (req,res) => 
 {
     try{
-        const file =  path.join(dirname, '/frontend/index.html') // path to file
+        const file =  path.join(dirname, '/Frontend/index.html') // path to file
         fs.access(file, fs.constants.F_OK)
         .then(() => res.sendFile(file))
         .catch((error) => {throw error});
