@@ -35,27 +35,73 @@
             </div>
         </div>
 
-        <div id="employment">
-            <div id="company">
-                <h2>Jobs</h2>
-                <span id="company-span">Company</span>
-                <input type="text" name="CompanyName" placeholder="Enter company name" >
-                <span id="company-span">Job title</span>
-                <input type="text" name="JobTitle" placeholder="Enter job title">
-            </div>
-            <div id="start-end-date">
-                <span id="company-span">Start date</span>
-                <input type="date" name="StartingDate">
-                <span id="company-span">End date</span>
-                <input type="date" name="EndingDate">
-            </div>
-            <div id="responsibilities">
-                <span id="company-span">Responsibilities</span>
-                <textarea cols="30" rows="10" name="Responsibilities"></textarea>
+        <div id="box-emp">
+            <div id="employment">
+                <div id="company">
+                    <h2>Jobs</h2>
+                    <span id="company-span">Company</span>
+                    <input type="text" name="CompanyName" placeholder="Enter company name" >
+                    <span id="company-span">Job title</span>
+                    <input type="text" name="JobTitle" placeholder="Enter job title">
+                </div>
+                <div id="start-end-date">
+                    <span id="company-span">Start date</span>
+                    <input type="date" name="StartingDate">
+                    <span id="company-span">End date</span>
+                    <input type="date" name="EndingDate">
+                </div>
+                <div id="responsibilities">
+                    <span id="company-span">Responsibilities</span>
+                    <textarea cols="30" rows="10" name="Responsibilities"></textarea>
+                </div>
             </div>
         </div>
         <div id="add-btn">
-            <button onclick="addResp()">+</button>
+            <button onclick="addEmployment()">+</button>
+        </div> 
+
+        <div id="box-education">
+            <div id="education">
+                <div id="institution">
+                    <h2>Education</h2>
+                    <span id="education-span">Institution/Course</span>
+                    <input type="text" name="ICName" placeholder="Enter institution/course name" >
+                    <span id="education-span">Specialization</span>
+                    <input type="text" name="Specialization" placeholder="Enter specialization">
+                </div>
+                <div id="start-end-date">
+                    <span id="education-span">Start date</span>
+                    <input type="date" name="StartingDate">
+                    <span id="education-span">End date</span>
+                    <input type="date" name="EndingDate">
+                </div>
+                <div id="responsibilities">
+                    <span id="education-span">Qualifications</span>
+                    <textarea cols="30" rows="10" name="qualifications"></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="add-btn">
+            <button onclick="addEducation()">+</button>
+        </div>
+
+        <div id="box-summary">
+            <div id="aboutMe">
+                <h2>Summary</h2>
+                <span id="education-span">About me</span>
+                <textarea cols="30" rows="10" name="aboutMe"></textarea>
+            </div>
+            <dv id="links">
+                <h2>Media</h2>
+                <select name="selectLinks">
+                    <option>Youtube</option>
+                    <option>Linkedin</option>
+                    <option>Instagram</option>
+                    <option>Facebook</option>
+                    <option>Github</option>
+                    <option>Other</option>
+                </select>
+            </dv>
         </div>
         <input type="submit"/>
     </form>

@@ -20,5 +20,27 @@ dropArea.addEventListener("drop", function (e) {
     uploadImage();
 });
 
+let i = 1;
+function addEmployment() {
+    document.querySelector("#box-emp").innerHTML += `<div id="employment"><div id="company">
+    <h2>Jobs</h2>
+    <span id="company-span">Company</span>
+    <input type="text" name="CompanyName${i}" placeholder="Enter company name" >
+    <span id="company-span">Job title</span>
+    <input type="text" name="JobTitle${i}" placeholder="Enter job title">
+</div>
+<div id="start-end-date">
+    <span id="company-span">Start date</span>
+    <input type="date" name="StartingDate${i}">
+    <span id="company-span">End date</span>
+    <input type="date" name="EndingDate${i}">
+</div>
+<div id="responsibilities">
+    <span id="company-span">Responsibilities</span>
+    <textarea cols="30" rows="10" name="Responsibilities${i}"></textarea>
+</div></div>`;
+    i++;
+}
+
 
 
