@@ -1,14 +1,70 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="styles/cvstyles.css"/>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+    }
+    .left-column {
+        width: 30%;
+        padding: 20px;
+        height: 96.3vh;
+        background-color: #f2f2f2;
+    }
+    .right-column {
+        width: 70%;
+        padding: 20px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        height: 96.3vh;
+        border-radius: 50%;
+    }
+    h1, h2, p {
+        margin: 0;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
 <body>
-    <div id="LeftPanel">
-        <h1>EX1</h1>
-        <a target="_blank" href="https://youtube.com">Lol</a>
-    </div>
-    <div id="RightPanel">
 
+<div class="container">
+    <div class="left-column">
+        <img src="data:image/jpeg;base64,[% BUFFER %]" alt="Your Photo">
+        [% NAME %]
+        <ul>
+            [% ADRESS %]
+            [% EMAIL %]
+            [% PHONE %]
+        </ul>
     </div>
+    <div class="right-column">
+        [% EDUCATION %]
+        [% EMPLOYMENT %]
+        [% ABOUTME %]    
+    </div>
+</div>
+
 </body>
 </html>
