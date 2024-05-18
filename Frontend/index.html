@@ -16,8 +16,8 @@
     <form method="POST" action="/CV" enctype="multipart/form-data">
         <div id="basic-info">
             <label for="input-file" id="drop-area">
-                <!-- <input type="file" accept="image/*" id="input-file" name="Photo" hidden> -->
-                <input type="file" name="Photo" />
+                <input type="file" accept="image/*" id="input-file" name="Photo" hidden>
+                <!-- <input type="file" name="Photo" /> -->
                 <!-- prez to image/* przeglądarka akceptuje tylko zdjęcia-->
                 <img src="images/icon.png">
             </label>
@@ -36,11 +36,12 @@
                 <div><img src="images/adress.png"> <input type="text" placeholder="Enter adress" name="Adress"></div>
             </div>
         </div>
+        <hr>
 
         <div id="box-emp">
             <div id="employment">
                 <div id="company">
-                    <h2>Jobs</h2>
+                    <h2>Employment</h2>
                     <span id="company-span">Company</span>
                     <input type="text" name="CompanyName" placeholder="Enter company name">
                     <span id="company-span">Job title</span>
@@ -57,10 +58,12 @@
                     <textarea cols="30" rows="10" name="Responsibilities"></textarea>
                 </div>
             </div>
+            <div id="employment-container"></div>
+            <div id="add-btn">
+                <button type="button" onclick="addEmployment()">+</button>
+            </div>
         </div>
-        <div id="add-btn">
-            <button type="button" onclick="addEmployment()">+</button>
-        </div>
+        <hr>
 
         <div id="box-edu">
             <div class="education">
@@ -82,10 +85,12 @@
                     <textarea cols="30" rows="10" name="qualifications"></textarea>
                 </div>
             </div>
+            <div id="education-container"></div>
+            <div id="add-btn">
+                <button type="button" onclick="addEducation()">+</button>
+            </div>
         </div>
-        <div id="add-btn">
-            <button type="button" onclick="addEducation()">+</button>
-        </div>
+        <hr>
 
         <div id="box-summary">
             <div id="aboutMe">
@@ -93,9 +98,36 @@
                 <span id="education-span">About me</span>
                 <textarea cols="30" rows="10" name="aboutMe"></textarea>
             </div>
-            </dv>
+            <div class="social-media">
+                <div class="checkboxes">
+                    <div class="checkbox-item">
+                        <label for="youtube" class="icon-label"><img src="images/youtube-icon.png"
+                                alt="YouTube"></label>
+                        <input type="text" id="youtube-link" name="youtube-link" placeholder="Link to YouTube">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="linkedin" class="icon-label"><img src="images/linkedin-icon.png"
+                                alt="LinkedIn"></label>
+                        <input type="text" id="linkedin-link" name="linkedin-link" placeholder="Link to LinkedIn">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="instagram" class="icon-label"><img src="images/instagram-icon.png"
+                                alt="Instagram"></label>
+                        <input type="text" id="instagram-link" name="instagram-link" placeholder="Link to Instagram">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="facebook" class="icon-label"><img src="images/facebook-icon.png"
+                                alt="Facebook"></label>
+                        <input type="text" id="facebook-link" name="facebook-link" placeholder="Link to Facebook">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="github" class="icon-label"><img src="images/github-icon.png" alt="GitHub"></label>
+                        <input type="text" id="github-link" name="github-link" placeholder="Link to GitHub">
+                    </div>
+                </div>
+            </div>
         </div>
-        <input type="submit" />
+        <input type="submit" class="submit-btn" value="Generate CV" />
     </form>
     <script>
         const dropArea = document.getElementById("drop-area");
@@ -123,51 +155,93 @@
             uploadImage();
         });
 
-        function addEmployment() {
-            document.querySelector("#box-emp").innerHTML += `<div id="employment"><div id="company">
-            <h2>Jobs</h2>
-            <span id="company-span">Company</span>
-            <input type="text" name="CompanyName${i}" placeholder="Enter company name" >
-            <span id="company-span">Job title</span>
-            <input type="text" name="JobTitle${i}" placeholder="Enter job title">
-        </div>
-        <div id="start-end-date">
-            <span id="company-span">Start date</span>
-            <input type="date" name="StartingDate${i}">
-            <span id="company-span">End date</span>
-            <input type="date" name="EndingDate${i}">
-        </div>
-        <div id="responsibilities">
-            <span id="company-span">Responsibilities</span>
-            <textarea cols="30" rows="10" name="Responsibilities${i}"></textarea>
-        </div></div>`;
+        const addEmployment = () => {
+            const empTemplate = `
+                <div class="employment-added">
+                    <div id="company">
+                        <span id="company-span-added">Company</span>
+                        <input type="text" name="CompanyName${i}" placeholder="Enter company name">
+                        <span id="company-span">Job title</span>
+                        <input type="text" name="JobTitle${i}" placeholder="Enter job title">
+                    </div>
+                    <div id="start-end-date">
+                        <span id="company-span">Start date</span>
+                        <input type="date" name="StartingDate${i}">
+                        <span id="company-span">End date</span>
+                        <input type="date" name="EndingDate${i}">
+                    </div>
+                    <div id="responsibilities">
+                        <span id="company-span">Responsibilities</span>
+                        <textarea cols="30" rows="10" name="Responsibilities${i}"></textarea>
+                    </div>
+                </div>`;
             i++;
-        }
 
-        function addEducation() {
-            document.querySelector("#box-edu").innerHTML += `   
-                <div class="education">
-                    <div id="institution">
-                            <h2>Education</h2>
-                            <span id="education-span">Institution/Course</span>
-                            <input type="text" name="ICName${it}" placeholder="Enter institution/course name" >
-                            <span id="education-span">Specialization</span>
-                            <input type="text" name="Specialization${it}" placeholder="Enter specialization">
-                        </div>
-                        <div id="start-end-date">
-                            <span id="education-span">Start date</span>
-                            <input type="date" name="StartingDate${it}">
-                            <span id="education-span">End date</span>
-                            <input type="date" name="EndingDate${it}">
-                        </div>
-                        <div id="responsibilities">
-                            <span id="education-span">Qualifications</span>
-                            <textarea cols="30" rows="10" name="qualifications${it}"></textarea>
-                        </div>
-                    </div>   
+            const employmentContainer = document.querySelector("#employment-container");
+
+            employmentContainer.insertAdjacentHTML('beforeend', empTemplate);
+
+            const newElement = employmentContainer.lastElementChild;
+
+            setTimeout(() => {
+                newElement.classList.add('show');
+            }, 100);
+        };
+
+        const addEducation = () => {
+            const eduTemplate = `
+            <div class="education-added">
+                <div id="institution">
+                    <span id="education-span-added">Institution/Course</span>
+                    <input type="text" name="ICName${it}" placeholder="Enter institution/course name">
+                    <span id="education-span">Specialization</span>
+                    <input type="text" name="Specialization${it}" placeholder="Enter specialization">
                 </div>
-            `
-        }
+                <div id="start-end-date">
+                    <span id="education-span">Start date</span>
+                    <input type="date" name="StartingDate${it}">
+                    <span id="education-span">End date</span>
+                    <input type="date" name="EndingDate${it}">
+                </div>
+                <div id="responsibilities">
+                    <span id="education-span">Qualifications</span>
+                    <textarea cols="30" rows="10" name="qualifications${it}"></textarea>
+                </div>
+            </div>`;
+            it++;
+
+            const educationContainer = document.querySelector("#education-container");
+
+            educationContainer.insertAdjacentHTML('beforeend', eduTemplate);
+
+            const newElement = educationContainer.lastElementChild;
+
+            setTimeout(() => {
+                newElement.classList.add('show');
+            }, 100);
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let iconLabels = document.querySelectorAll('.icon-label');
+            let textInputs = document.querySelectorAll('.checkbox-item input[type="text"]');
+
+            iconLabels.forEach(function (label, index) {
+                label.addEventListener("click", function () {
+                    if (textInputs[index].classList.contains('hidden')) {
+                        textInputs[index].classList.remove('hidden');
+                        textInputs[index].classList.add('visible');
+                    } else {
+                        textInputs[index].classList.add('hiding');
+                        setTimeout(function () {
+                            textInputs[index].classList.remove('hiding');
+                            textInputs[index].classList.add('hidden');
+                            textInputs[index].classList.remove('visible');
+                        }, 200);
+                    }
+                });
+
+            });
+        });
     </script>
 </body>
 
