@@ -30,73 +30,86 @@ const CV_Create = async (req, res) => {
         const photo = req.file.buffer.toString("base64");
         const data = req.body;
 
-        fileText =  await fs.readFile(file, 'utf8', (data) => {return data});
+        console.log(data)
 
-        if(photo !== ""){fileText = fileText.replace("[% BUFFER %]", photo)}
-        else{fileText = fileText.replace("[% BUFFER %]", "")}
+        fileText = await fs.readFile(file, 'utf8', (data) => { return data });
 
-        if(data.FirstName !== "" && data.LastName !== ""){fileText = fileText.replace("[% NAME %]", `<h1>${data.FirstName + " " + data.LastName}</h1>`)}
-        else{fileText = fileText.replace("[% NAME %]", "")}
+        if (photo !== "") { fileText = fileText.replace("[% BUFFER %]", photo) }
+        else { fileText = fileText.replace("[% BUFFER %]", "") }
 
-        if(data.Adress !== ""){fileText = fileText.replace("[% ADRESS %]", `<li>Location: ${data.Adress}</li>`)}
-        else{fileText = fileText.replace("[% ADRESS %]", "")}    
+        if (data.FirstName !== "" && data.LastName !== "") { fileText = fileText.replace("[% NAME %]", `<h1>${data.FirstName + " " + data.LastName}</h1>`) }
+        else { fileText = fileText.replace("[% NAME %]", "") }
 
-        if(data.Mail !== ""){fileText = fileText.replace("[% EMAIL %]", `<li>Email: ${data.Mail}</li>`)}
-        else{fileText = fileText.replace("[% EMAIL %]", "")} 
+        if (data.Adress !== "") { fileText = fileText.replace("[% ADRESS %]", `<p>Location: ${data.Adress}</p>`) }
+        else { fileText = fileText.replace("[% ADRESS %]", "") }
 
-        if(data.Phone !== ""){fileText = fileText.replace("[% PHONE %]", `<li>Phone: ${data.Mail}</li>`)}
-        else{fileText = fileText.replace("[% PHONE %]", "")} 
+        if (data.Mail !== "") { fileText = fileText.replace("[% EMAIL %]", `<p>Email: ${data.Mail}</p>`) }
+        else { fileText = fileText.replace("[% EMAIL %]", "") }
 
-        if(data.CompanyName !== "" && data.JobTitle !== "" && data.StartingDate != ['', ''] && data.EndingDate != ['', ''] && data.Responsibilities !== "")
-        {
+        if (data.Phone !== "") { fileText = fileText.replace("[% PHONE %]", `<p>Phone: +48 ${data.Phone}</p>`) }
+        else { fileText = fileText.replace("[% PHONE %]", "") }
+
+        if (data.aboutMe !== "") { fileText = fileText.replace("[% ABOUTME %]", `<p>${data.aboutMe}</p>`) }
+        else { fileText = fileText.replace("[% ABOUTME %]", "") }
+
+        if (data.CompanyName !== "" && data.JobTitle !== "" && data.StartingDate != ['', ''] && data.EndingDate != ['', ''] && data.Responsibilities !== "") {
             fileText = fileText.replace("[% EMPLOYMENT %]", `
-                <h3>${data.CompanyName}</h3>
-                <p>${data.StartingDate[0]}:${data.EndingDate[0]}</p>
-                <p>${data.Responsibilities}</p>
-                <p></p>
+                <div class="com">
+                    <h3>${data.CompanyName}</h3>
+                    <h4>${data.JobTitle}</h4>
+                    From: ${data.StartingDate[0]}, To: ${data.EndingDate[0]}
+                    <br>
+                    <p>${data.Responsibilities}</p>
+                </div>
                 [% EMPLOYMENT %]
             `)
         }
-        else{fileText = fileText.replace("[% EMPLOYMENT %]", "")} 
+        else { fileText = fileText.replace("[% EMPLOYMENT %]", "") }
 
         let it = 1;
-        while(eval("data.CompanyName"+it))
-        {
+        while (eval("data.CompanyName" + it)) {
             fileText = fileText.replace("[% EMPLOYMENT %]", `
-                <h3>${eval("data.CompanyName"+it)}</h3>
-                <p>${eval("data.StartingDate"+it+"[0]")}:${eval("data.EndingDate"+it+"[0]")}</p>
-                <p>${eval("data.Responsibilities"+it)}</p>
+                <div class="com">
+                    <h3>${eval("data.CompanyName" + it)}</h3>
+                    <h4>${eval("data.JobTitle" + 1)}</h4>
+                    From: ${eval("data.StartingDate" + it + "[0]")}, To: ${eval("data.EndingDate" + it + "[0]")}
+                    <br>
+                    <p>${eval("data.Responsibilities" + it)}</p>
+                </div>
                 [% EMPLOYMENT %]
             `)
             it++;
         }
         fileText = fileText.replace("[% EMPLOYMENT %]", "")
-        if(data.ICName !== "" && data.Specialization !== "" && data.qualifications !== "")
-            {
-                fileText = fileText.replace("[% EDUCATION %]", `
+
+        if (data.ICName !== "" && data.Specialization !== "" && data.qualifications !== "") {
+            fileText = fileText.replace("[% EDUCATION %]", `
+                <div class="edu">
                     <h3>${data.ICName}</h3>
-                    <p>${data.Specialization}</p>
-                    <p>${data.qualifications}</p>
-                    [% EDUCATION %]
+                    <h4>${data.Specialization}</h4>
+                    ${data.qualifications}
+                    <p>From: ${data.StartingDate[1]}, To: ${data.EndingDate[1]}</p>
+                </div>    
+                [% EDUCATION %]
                 `)
-            }
-        else{fileText = fileText.replace("[% EDUCATION %]", "")} 
+        }
+        else { fileText = fileText.replace("[% EDUCATION %]", "") }
 
         let i = 1;
-        while(eval("data.ICName"+i))
-        {
+        while (eval("data.ICName" + i)) {
             fileText = fileText.replace("[% EDUCATION %]", `
-                <h3>${eval("data."+i)}</h3>
-                <p>${eval("data.Specialization"+i)}</p>
-                <p>${eval("data.qualifications"+i)}</p>
+                <div class="edu">
+                    <h3>${eval("data.ICName" + i)}</h3>
+                    <h4>${eval("data.Specialization" + i)}</h4>
+                    ${eval("data.qualifications" + i)}
+
+                    <p>From: ${data.StartingDate[1]}, To: ${data.EndingDate[1]}</p>
+                </div>
                 [% EDUCATION %]
             `)
             i++;
         }
         fileText = fileText.replace("[% EDUCATION %]", "")
-
-        if(data.aboutMe !== ""){fileText = fileText.replace("[% ABOUTME %]",`<h2>About Me</h2><p>${data.aboutMe}</p>`)}
-        else{fileText = fileText.replace("[% ABOUTME %]", "")}   
 
         const pdf = await Creator(fileText);
         res.header('Content-type', 'application/pdf')

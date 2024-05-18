@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        display: flex;
-    }
-    .left-column {
-        width: 30%;
-        padding: 20px;
-        height: 96.3vh;
-        background-color: #f2f2f2;
-    }
-    .right-column {
-        width: 70%;
-        padding: 20px;
-    }
-    img {
-        max-width: 100%;
-        height: auto;
-        height: 96.3vh;
-        border-radius: 50%;
-    }
-    h1, h2, p {
-        margin: 0;
-    }
-    h1 {
-        font-size: 24px;
-    }
-    h2 {
-        font-size: 20px;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    ul li {
-        margin-bottom: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            padding: 0;
+            box-sizing: border-box;
+            width: 210mm;
+            height: 297mm;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            width: 100%;
+        }
+
+        .left-column {
+            width: 35%;
+            height: 100%;
+            padding: 3%;
+            box-sizing: border-box;
+            background-color: #f2f2f2;
+        }
+
+        .right-column {
+            width: 65%;
+            height: 100%;
+            padding: 2%;
+            box-sizing: border-box;
+        }
+
+        #photo {
+            width: 95%;
+            text-align: center;
+            margin: 2%;
+        }
+
+        #name {
+            text-align: center;
+            font-size: 2vw;
+        }
+
+        #adress,
+        #email,
+        #phone {
+            text-align: left;
+            font-size: 2vw;
+        }
+
+        .com, .edu{margin: 3%;}
+
+        h1{
+            font-size: 3vw;
+        }
+
+        h3 {
+            font-size: 2.5vw;margin: 0;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 2vw;
+        }
+        
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="left-column">
-        <img src="data:image/jpeg;base64,[% BUFFER %]" alt="Your Photo">
-        [% NAME %]
-        <ul>
-            [% ADRESS %]
-            [% EMAIL %]
-            [% PHONE %]
-        </ul>
-    </div>
-    <div class="right-column">
-        [% EDUCATION %]
-        [% EMPLOYMENT %]
-        [% ABOUTME %]    
-    </div>
-</div>
+    <div id="container">
+        <div class="left-column">
+            <div id="photo">
+                <img src="data:image/jpeg;base64,[% BUFFER %]" alt="Your Photo">
+            </div>
+            <div id="name">
+                [% NAME %]
+            </div>
 
+            <div id="aboutme">
+                [% ABOUTME %]
+            </div>
+
+            <div id="adress">
+                [% ADRESS %]
+            </div>
+            <div id="email">
+                [% EMAIL %]
+            </div>
+            <div id="phone">
+                [% PHONE %]
+            </div>
+        </div>
+        <div class="right-column">
+
+            <h1>Employment</h1>
+            <div id="employment">
+                [% EMPLOYMENT %]
+            </div>
+
+            <br>
+
+            <h1>Education</h1>
+            <div id="education">
+                [% EDUCATION %]
+            </div>
+
+            <br>
+        </div>
+    </div>
 </body>
+
 </html>

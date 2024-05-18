@@ -17,7 +17,7 @@
         <div id="basic-info">
             <label for="input-file" id="drop-area">
                 <!-- <input type="file" accept="image/*" id="input-file" name="Photo" hidden> -->
-                <input type="file" name="Photo">
+                <input type="file" name="Photo" />
                 <!-- prez to image/* przeglądarka akceptuje tylko zdjęcia-->
                 <img src="images/icon.png">
             </label>
@@ -30,7 +30,8 @@
             </div>
             <div id="contact">
                 <h2>Contact details</h2>
-                <div><img src="images/phone.png"> <input type="text" placeholder="Enter phone number" name="Phone"></div>
+                <div><img src="images/phone.png"> <input type="text" placeholder="Enter phone number" name="Phone">
+                </div>
                 <div><img src="images/mail.png"> <input type="text" placeholder="Enter email" name="Mail"></div>
                 <div><img src="images/adress.png"> <input type="text" placeholder="Enter adress" name="Adress"></div>
             </div>
@@ -41,7 +42,7 @@
                 <div id="company">
                     <h2>Jobs</h2>
                     <span id="company-span">Company</span>
-                    <input type="text" name="CompanyName" placeholder="Enter company name" >
+                    <input type="text" name="CompanyName" placeholder="Enter company name">
                     <span id="company-span">Job title</span>
                     <input type="text" name="JobTitle" placeholder="Enter job title">
                 </div>
@@ -59,14 +60,14 @@
         </div>
         <div id="add-btn">
             <button type="button" onclick="addEmployment()">+</button>
-        </div> 
+        </div>
 
-        <div id="box-education">
-            <div id="education">
+        <div id="box-edu">
+            <div class="education">
                 <div id="institution">
                     <h2>Education</h2>
                     <span id="education-span">Institution/Course</span>
-                    <input type="text" name="ICName" placeholder="Enter institution/course name" >
+                    <input type="text" name="ICName" placeholder="Enter institution/course name">
                     <span id="education-span">Specialization</span>
                     <input type="text" name="Specialization" placeholder="Enter specialization">
                 </div>
@@ -94,16 +95,19 @@
             </div>
             </dv>
         </div>
-        <input type="submit"/>
+        <input type="submit" />
     </form>
     <script>
         const dropArea = document.getElementById("drop-area");
         const inputFile = document.getElementById("input-file");
+        let i = 1;
+        let it = 1;
 
         inputFile.addEventListener("change", uploadImage);
 
         function uploadImage() {
-            let imgLink = URL.createObjectURL(inputFile.files[0]); // da tego file'a ktory jest zuploadowany i zamieni go na URL 
+            let val = inputFile.files[0];
+            let imgLink = URL.createObjectURL(val); // da tego file'a ktory jest zuploadowany i zamieni go na URL 
             dropArea.style.backgroundImage = `url(${imgLink})`;
             dropArea.textContent = "";
             dropArea.style.border = 0;
@@ -119,7 +123,6 @@
             uploadImage();
         });
 
-        let i = 1;
         function addEmployment() {
             document.querySelector("#box-emp").innerHTML += `<div id="employment"><div id="company">
             <h2>Jobs</h2>
@@ -139,6 +142,31 @@
             <textarea cols="30" rows="10" name="Responsibilities${i}"></textarea>
         </div></div>`;
             i++;
+        }
+
+        function addEducation() {
+            document.querySelector("#box-edu").innerHTML += `   
+                <div class="education">
+                    <div id="institution">
+                            <h2>Education</h2>
+                            <span id="education-span">Institution/Course</span>
+                            <input type="text" name="ICName${it}" placeholder="Enter institution/course name" >
+                            <span id="education-span">Specialization</span>
+                            <input type="text" name="Specialization${it}" placeholder="Enter specialization">
+                        </div>
+                        <div id="start-end-date">
+                            <span id="education-span">Start date</span>
+                            <input type="date" name="StartingDate${it}">
+                            <span id="education-span">End date</span>
+                            <input type="date" name="EndingDate${it}">
+                        </div>
+                        <div id="responsibilities">
+                            <span id="education-span">Qualifications</span>
+                            <textarea cols="30" rows="10" name="qualifications${it}"></textarea>
+                        </div>
+                    </div>   
+                </div>
+            `
         }
     </script>
 </body>

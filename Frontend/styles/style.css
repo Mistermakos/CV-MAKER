@@ -23,7 +23,11 @@ form {
     height: 100%;
 }
 
-#basic-info, #employment, #education, #box-summary, #links {
+#basic-info,
+#employment,
+.education,
+#box-summary,
+#links {
     display: flex;
     justify-content: space-around;
     width: 800px;
@@ -69,8 +73,7 @@ form {
     border-radius: 5px;
 }
 
-#contact 
-{
+#contact {
     display: flex;
     flex-direction: column;
 }
@@ -93,27 +96,29 @@ form {
     margin-right: 10px;
 }
 
-#employment, #education
-{
+#employment,
+.education {
     display: flex;
     /* justify-content: space-around; */
-    justify-content:left;
+    justify-content: left;
     margin-bottom: -2px;
 }
 
-#company, #institution
-{
+#company,
+#institution {
     display: flex;
     flex-direction: column;
     margin-bottom: 11px;
     margin-left: 35px;
 }
 
-#company-span, #education-span {
+#company-span,
+#education-span {
     margin-bottom: 11px;
 }
 
-#company input, #institution input {
+#company input,
+#institution input {
     width: 250px;
     font-size: 15px;
     height: 40px;
@@ -125,7 +130,7 @@ form {
 }
 
 /*#employment input[type=date]  */
-input[type=date] { 
+input[type=date] {
     width: 120px;
     font-size: 15px;
     height: 40px;
@@ -143,12 +148,14 @@ input[type=date] {
     margin-left: 50px;
 }
 
-#responsibilities, #qualifications {
+#responsibilities,
+#qualifications {
     margin-top: 70px;
     margin-left: 50px;
 }
 
-#responsibilities textarea, #qualifications textarea {
+#responsibilities textarea,
+#qualifications textarea {
     height: 134px;
     margin-top: 11px;
     background-color: rgb(214, 208, 208);
@@ -165,7 +172,7 @@ input[type=date] {
     font-weight: bold;
     width: 50px;
     height: 50px;
-    padding: 20px;  
+    padding: 20px;
     background-color: #6831ff;
     font-size: 20px;
     color: white;
@@ -175,14 +182,14 @@ input[type=date] {
 
 #add-btn button:hover {
     background-color: #8c62ff;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#aboutMe span{
+#aboutMe span {
     display: block;
 }
 
-#aboutMe textarea { 
+#aboutMe textarea {
     height: 134px;
     background-color: rgb(214, 208, 208);
     font-size: 15px;
