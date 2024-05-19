@@ -23,9 +23,17 @@ form {
     height: 100%;
 }
 
+hr {
+    margin-top: 60px;
+    width: 730px;
+    color: #6831ff;
+}
+
 #basic-info,
 #employment,
+.employment-added,
 .education,
+.education-added,
 #box-summary,
 #links {
     display: flex;
@@ -68,9 +76,16 @@ form {
     height: 40px;
     padding: 5px;
     margin-bottom: 10px;
-    background-color: rgb(214, 208, 208);
+    background-color: transparent;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0;
+    border-bottom: 2px solid #6831ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+#first-last-name input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #contact {
@@ -84,10 +99,16 @@ form {
     height: 40px;
     padding: 5px;
     margin-bottom: 10px;
-    border-radius: 5px;
-    /* background-color: rgb(236, 234, 234); */
-    background-color: rgb(214, 208, 208);
+    background-color: transparent;
     border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #6831ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+#contact input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #contact img {
@@ -97,11 +118,18 @@ form {
 }
 
 #employment,
-.education {
+.employment-added,
+.education,
+.education-added {
     display: flex;
     /* justify-content: space-around; */
     justify-content: left;
     margin-bottom: -2px;
+}
+
+.employment-added,
+.education-added {
+    margin-top: -30px;
 }
 
 #company,
@@ -113,32 +141,55 @@ form {
 }
 
 #company-span,
-#education-span {
+#company-span-added,
+#education-span,
+#education-span-added {
     margin-bottom: 11px;
 }
 
+#company-span-added,
+#education-span-added {
+    margin-top: 69px;
+}
+
 #company input,
+#company-added input,
 #institution input {
     width: 250px;
     font-size: 15px;
     height: 40px;
     padding: 5px;
     margin-bottom: 10px;
-    background-color: rgb(214, 208, 208);
+    background-color: transparent;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0;
+    border-bottom: 2px solid #6831ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
 }
 
-/*#employment input[type=date]  */
+#company input::placeholder,
+#company-added input::placeholder,
+#institution input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
 input[type=date] {
     width: 120px;
     font-size: 15px;
     height: 40px;
     padding: 5px;
     margin-bottom: 10px;
-    background-color: rgb(214, 208, 208);
+    background-color: transparent;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0;
+    border-bottom: 2px solid #6831ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input[type=date]::placeholder {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #start-end-date {
@@ -156,15 +207,31 @@ input[type=date] {
 
 #responsibilities textarea,
 #qualifications textarea {
-    height: 134px;
-    margin-top: 11px;
-    background-color: rgb(214, 208, 208);
-    font-size: 15px;
     width: 235px;
+    font-size: 15px;
+    height: 134px;
+    padding: 5px;
+    margin-top: 11px;
+    background-color: transparent;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0;
+    border-bottom: 2px solid #6831ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    resize: none;
 }
 
+#responsibilities textarea:focus,
+#qualifications textarea:focus {
+    border-bottom-color: #6831ff;
+}
+
+#responsibilities textarea::placeholder,
+#qualifications textarea::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/*
 #add-btn button {
     display: flex;
     justify-content: center;
@@ -183,6 +250,55 @@ input[type=date] {
 #add-btn button:hover {
     background-color: #8c62ff;
     cursor: pointer;
+} */
+
+#box-edu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#box-emp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#add-btn {
+    margin-top: 20px;
+}
+
+#add-btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    background-color: #6831ff;
+    font-size: 20px;
+    color: white;
+    border: 2px solid #bbb5ff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+#add-btn button:hover {
+    background-color: #5528cc;
+    transform: scale(1.1);
+}
+
+#add-btn button:active {
+    transform: scale(0.95);
+}
+
+#add-btn button:focus {
+    outline: none;
 }
 
 #aboutMe span {
@@ -191,9 +307,154 @@ input[type=date] {
 
 #aboutMe textarea {
     height: 134px;
-    background-color: rgb(214, 208, 208);
+    background-color: rgb(226, 226, 226);
     font-size: 15px;
     width: 235px;
     border: 0;
     border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #6831ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #bbb5ff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #5528cc;
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px #6831ff;
+}
+
+.employment-added,
+.education-added {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.employment-added.show,
+.education-added.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pulsate {
+    animation: pulsate 1.5s ease forwards;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.social-media {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-item label.icon-label {
+    width: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item label.icon-label img {
+    width: 40px;
+    height: 40px;
+}
+
+.checkbox-item label.icon-label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.checkbox-item input[type="text"] {
+    display: none;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid #6831ff;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+@keyframes pulse-reverse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+.checkbox-item input[type="text"].hidden {
+    display: none;
+}
+
+.checkbox-item input[type="text"].visible {
+    display: block;
+    animation: pulse 0.5s forwards;
+}
+
+.checkbox-item input[type="text"].hiding {
+    animation: pulse-reverse 0.5s forwards;
 }
