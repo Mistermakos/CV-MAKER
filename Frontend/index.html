@@ -15,12 +15,12 @@
     </header>
     <form method="POST" action="/CV" enctype="multipart/form-data">
         <div id="basic-info">
-            <label for="input-file" id="drop-area">
-                <input type="file" accept="image/*" id="input-file" name="Photo" hidden>
-                <!-- <input type="file" name="Photo" /> -->
-                <!-- prez to image/* przeglądarka akceptuje tylko zdjęcia-->
-                <img src="images/icon.png">
-            </label>
+            <div id="photo-input">
+                <label for="file-upload">Choose File</label>
+                <input id="file-upload" type="file" name="Photo" />
+            </div>
+
+
             <div id="first-last-name">
                 <h2>Intro details</h2>
                 <span>First name</span>
@@ -98,31 +98,36 @@
                 <span id="education-span">About me</span>
                 <textarea cols="30" rows="10" name="aboutMe"></textarea>
             </div>
-            <div class="social-media">
-                <div class="checkboxes">
-                    <div class="checkbox-item">
-                        <label for="youtube" class="icon-label"><img src="images/youtube-icon.png"
-                                alt="YouTube"></label>
-                        <input type="text" id="youtube-link" name="youtube-link" placeholder="Link to YouTube">
-                    </div>
-                    <div class="checkbox-item">
-                        <label for="linkedin" class="icon-label"><img src="images/linkedin-icon.png"
-                                alt="LinkedIn"></label>
-                        <input type="text" id="linkedin-link" name="linkedin-link" placeholder="Link to LinkedIn">
-                    </div>
-                    <div class="checkbox-item">
-                        <label for="instagram" class="icon-label"><img src="images/instagram-icon.png"
-                                alt="Instagram"></label>
-                        <input type="text" id="instagram-link" name="instagram-link" placeholder="Link to Instagram">
-                    </div>
-                    <div class="checkbox-item">
-                        <label for="facebook" class="icon-label"><img src="images/facebook-icon.png"
-                                alt="Facebook"></label>
-                        <input type="text" id="facebook-link" name="facebook-link" placeholder="Link to Facebook">
-                    </div>
-                    <div class="checkbox-item">
-                        <label for="github" class="icon-label"><img src="images/github-icon.png" alt="GitHub"></label>
-                        <input type="text" id="github-link" name="github-link" placeholder="Link to GitHub">
+            <div id="aboutMe">
+                <h2>Social links</h2>
+                <div class="social-media">
+                    <div class="checkboxes">
+                        <div class="checkbox-item">
+                            <label for="youtube" class="icon-label"><img src="images/youtube-icon.png"
+                                    alt="YouTube"></label>
+                            <input type="text" id="youtube-link" name="youtube-link" placeholder="Link to YouTube">
+                        </div>
+                        <div class="checkbox-item">
+                            <label for="linkedin" class="icon-label"><img src="images/linkedin-icon.png"
+                                    alt="LinkedIn"></label>
+                            <input type="text" id="linkedin-link" name="linkedin-link" placeholder="Link to LinkedIn">
+                        </div>
+                        <div class="checkbox-item">
+                            <label for="instagram" class="icon-label"><img src="images/instagram-icon.png"
+                                    alt="Instagram"></label>
+                            <input type="text" id="instagram-link" name="instagram-link"
+                                placeholder="Link to Instagram">
+                        </div>
+                        <div class="checkbox-item">
+                            <label for="facebook" class="icon-label"><img src="images/facebook-icon.png"
+                                    alt="Facebook"></label>
+                            <input type="text" id="facebook-link" name="facebook-link" placeholder="Link to Facebook">
+                        </div>
+                        <div class="checkbox-item">
+                            <label for="github" class="icon-label"><img src="images/github-icon.png"
+                                    alt="GitHub"></label>
+                            <input type="text" id="github-link" name="github-link" placeholder="Link to GitHub">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,26 +139,6 @@
         const inputFile = document.getElementById("input-file");
         let i = 1;
         let it = 1;
-
-        inputFile.addEventListener("change", uploadImage);
-
-        function uploadImage() {
-            let val = inputFile.files[0];
-            let imgLink = URL.createObjectURL(val); // da tego file'a ktory jest zuploadowany i zamieni go na URL 
-            dropArea.style.backgroundImage = `url(${imgLink})`;
-            dropArea.textContent = "";
-            dropArea.style.border = 0;
-            dropArea.style.width = "134px !important";
-        }
-
-        dropArea.addEventListener("dragover", function (e) {
-            e.preventDefault(); // usuwa defaultowy event, ze po przeciagnieciu zdjecie otwiera mi sie w nowej karcie
-        });
-        dropArea.addEventListener("drop", function (e) {
-            e.preventDefault(); // usuwa defaultowy event, ze po przeciagnieciu zdjecie otwiera mi sie w nowej karcie
-            inputFile.files = e.dataTransfer.files; // file zostaje przetransportowany do inputFile
-            uploadImage();
-        });
 
         const addEmployment = () => {
             const empTemplate = `
@@ -215,33 +200,7 @@
             educationContainer.insertAdjacentHTML('beforeend', eduTemplate);
 
             const newElement = educationContainer.lastElementChild;
-
-            setTimeout(() => {
-                newElement.classList.add('show');
-            }, 100);
         };
-
-        document.addEventListener("DOMContentLoaded", function () {
-            let iconLabels = document.querySelectorAll('.icon-label');
-            let textInputs = document.querySelectorAll('.checkbox-item input[type="text"]');
-
-            iconLabels.forEach(function (label, index) {
-                label.addEventListener("click", function () {
-                    if (textInputs[index].classList.contains('hidden')) {
-                        textInputs[index].classList.remove('hidden');
-                        textInputs[index].classList.add('visible');
-                    } else {
-                        textInputs[index].classList.add('hiding');
-                        setTimeout(function () {
-                            textInputs[index].classList.remove('hiding');
-                            textInputs[index].classList.add('hidden');
-                            textInputs[index].classList.remove('visible');
-                        }, 200);
-                    }
-                });
-
-            });
-        });
     </script>
 </body>
 
