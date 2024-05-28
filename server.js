@@ -28,6 +28,7 @@ const Creator = async (fileText) => {
 const CV_Create = async (req, res) => {
     try {
         const photo = req.file.buffer.toString("base64");
+        const data = req.body;
 
         fileText = await fs.readFile(file, 'utf8', (data) => { return data });
 
