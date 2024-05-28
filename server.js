@@ -28,29 +28,21 @@ const Creator = async (fileText) => {
 const CV_Create = async (req, res) => {
     try {
         const photo = req.file.buffer.toString("base64");
-        const data = req.body;
-
-        console.log(data)
 
         fileText = await fs.readFile(file, 'utf8', (data) => { return data });
 
-        if (photo !== "") { fileText = fileText.replace("[% BUFFER %]", photo) }
-        else { fileText = fileText.replace("[% BUFFER %]", "") }
-
-        if (data.FirstName !== "" && data.LastName !== "") { fileText = fileText.replace("[% NAME %]", `<h1>${data.FirstName + " " + data.LastName}</h1>`) }
-        else { fileText = fileText.replace("[% NAME %]", "") }
-
-        if (data.Adress !== "") { fileText = fileText.replace("[% ADRESS %]", `<p>Location: ${data.Adress}</p>`) }
-        else { fileText = fileText.replace("[% ADRESS %]", "") }
-
-        if (data.Mail !== "") { fileText = fileText.replace("[% EMAIL %]", `<p>Email: ${data.Mail}</p>`) }
-        else { fileText = fileText.replace("[% EMAIL %]", "") }
-
-        if (data.Phone !== "") { fileText = fileText.replace("[% PHONE %]", `<p>Phone: +48 ${data.Phone}</p>`) }
-        else { fileText = fileText.replace("[% PHONE %]", "") }
-
-        if (data.aboutMe !== "") { fileText = fileText.replace("[% ABOUTME %]", `<p>${data.aboutMe}</p>`) }
-        else { fileText = fileText.replace("[% ABOUTME %]", "") }
+        fileText = fileText.replace("[% BUFFER %]", (photo !== "") ? photo : "")
+        fileText = fileText.replace("[% NAME %]", (data.FirstName !== "" && data.LastName !== "") ? `<h1>${data.FirstName + " " + data.LastName}</h1>` : "")
+        fileText = fileText.replace("[% ADRESS %]", (data.Adress !== "") ? `<p>Location: ${data.Adress}</p>` : "")
+        fileText = fileText.replace("[% EMAIL %]", (data.Mail !== "") ? `<p>Email: ${data.Mail}</p>` : "")
+        fileText = fileText.replace("[% PHONE %]", (data.Phone !== "") ? `<p>Phone: +48 ${data.Phone}</p>` : "")
+        fileText = fileText.replace("[% ABOUTME %]", (data.aboutMe !== "") ? `<p>${data.aboutMe}</p>` : "")
+        fileText = fileText.replace("[% LINKS %]", (data['youtube-link'] !== "") ? `<div id="youtube"> <a target="_blank" href="${data['youtube-link']}">My youtube!</a> </div> <br> [% LINKS %]` : "[% LINKS %]")
+        fileText = fileText.replace("[% LINKS %]", (data['linkedin-link'] !== "") ? `<div id="linkedin"> <a target="_blank" href="${data['linkedin-link']}">My linkedin!</a> </div>  <br> [% LINKS %]` : "[% LINKS %]")
+        fileText = fileText.replace("[% LINKS %]", (data['instagram-link'] !== "") ? `<div id="instagram"> <a target="_blank" href="${data['instagram-link']}">My instagram!</a> </div> <br> [% LINKS %]` : "[% LINKS %]")
+        fileText = fileText.replace("[% LINKS %]", (data['facebook-link'] !== "") ? `<div id="facebook"> <a target="_blank" href="${data['facebook-link']}">My facebook!</a> </div> <br> [% LINKS %]` : "[% LINKS %]")
+        fileText = fileText.replace("[% LINKS %]", (data['github-link'] !== "") ? `<div id="github"> <a target="_blank" href="${data['github-link']}">My github!</a> </div> <br> [% LINKS %]` : "[% LINKS %]")
+        fileText = fileText.replace("[% LINKS %]", "")
 
         if (data.CompanyName !== "" && data.JobTitle !== "" && data.StartingDate != ['', ''] && data.EndingDate != ['', ''] && data.Responsibilities !== "") {
             fileText = fileText.replace("[% EMPLOYMENT %]", `

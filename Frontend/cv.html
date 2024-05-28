@@ -42,7 +42,7 @@
             box-sizing: border-box;
         }
 
-        #photo {
+        #photo>img {
             width: 95%;
             text-align: center;
             margin: 2%;
@@ -60,21 +60,34 @@
             font-size: 2vw;
         }
 
-        .com, .edu{margin: 3%;}
+        .com,
+        .edu {
+            margin: 3%;
+        }
 
-        h1{
+        h1 {
             font-size: 3vw;
         }
 
         h3 {
-            font-size: 2.5vw;margin: 0;
+            font-size: 2.5vw;
+            margin: 0;
         }
 
         h4 {
             margin: 0;
             font-size: 2vw;
         }
-        
+
+        #youtube,
+        #linkedin,
+        #instagram,
+        #facebook,
+        #github {
+            margin:1.5%;
+            text-align: center;
+            font-size: 2.2vw;
+        }
     </style>
 </head>
 
@@ -101,6 +114,9 @@
             </div>
             <div id="phone">
                 [% PHONE %]
+            </div>
+            <div id="links">
+                [% LINKS %]
             </div>
         </div>
         <div class="right-column">
