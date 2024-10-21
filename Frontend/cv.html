@@ -1,141 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV</title>
     <style>
-        @page {
-            size: A4;
-            margin: 0;
-        }
+      @page {
+        size: A4;
+        margin: 0;
+      }
 
-        body {
-            margin: 0;
-            font-family: Arial;
-            padding: 0;
-            box-sizing: border-box;
-            width: 210mm;
-            height: 297mm;
-        }
+      body {
+        margin: 0;
+        font-family: Arial;
+        padding: 0;
+        box-sizing: border-box;
+        width: 210mm;
+        height: 297mm;
+      }
 
-        #container {
-            display: flex;
-            flex-direction: row;
-            height: 100%;
-            width: 100%;
-        }
+      #container {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+      }
 
-        .left-column {
-            width: 35%;
-            height: 100%;
-            padding: 3%;
-            box-sizing: border-box;
-            background-color: #f2f2f2;
-        }
+      .left-column {
+        width: 35%;
+        height: 100%;
+        padding: 3%;
+        box-sizing: border-box;
+        background-color: #f2f2f2;
+      }
 
-        .right-column {
-            width: 65%;
-            height: 100%;
-            padding: 2%;
-            box-sizing: border-box;
-        }
+      .right-column {
+        width: 65%;
+        height: 100%;
+        padding: 2%;
+        box-sizing: border-box;
+      }
 
-        #photo>img {
-            width: 95%;
-            text-align: center;
-            margin: 2%;
-        }
+      #photo > img {
+        width: 95%;
+        text-align: center;
+        margin: 2%;
+      }
 
-        #name {
-            text-align: center;
-            font-size: 2vw;
-        }
+      #name {
+        text-align: center;
+        font-size: 2vw;
+      }
 
-        #adress,
-        #email,
-        #phone {
-            text-align: left;
-            font-size: 2vw;
-        }
+      #adress,
+      #email,
+      #phone {
+        text-align: left;
+        font-size: 2vw;
+      }
 
-        .com,
-        .edu {
-            margin: 3%;
-        }
+      .com,
+      .edu {
+        margin: 3%;
+      }
 
-        h1 {
-            font-size: 3vw;
-        }
+      h1 {
+        font-size: 3vw;
+      }
 
-        h3 {
-            font-size: 2.5vw;
-            margin: 0;
-        }
+      h3 {
+        font-size: 2.5vw;
+        margin: 0;
+      }
 
-        h4 {
-            margin: 0;
-            font-size: 2vw;
-        }
+      h4 {
+        margin: 0;
+        font-size: 2vw;
+      }
 
-        #youtube,
-        #linkedin,
-        #instagram,
-        #facebook,
-        #github {
-            margin: 1.5%;
-            text-align: center;
-            font-size: 2.2vw;
-        }
+      #youtube,
+      #linkedin,
+      #instagram,
+      #facebook,
+      #github {
+        margin: 1.5%;
+        text-align: center;
+        font-size: 2.2vw;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="container">
-        <div class="left-column">
-            <div id="photo">
-                <img src="data:image/jpeg;base64,[% BUFFER %]" alt="Your Photo">
-            </div>
-            <div id="name">
-                [% NAME %]
-            </div>
-
-            <div id="aboutme">
-                [% ABOUTME %]
-            </div>
-
-            <div id="adress">
-                [% ADRESS %]
-            </div>
-            <div id="email">
-                [% EMAIL %]
-            </div>
-            <div id="phone">
-                [% PHONE %]
-            </div>
-            <div id="links">
-                [% LINKS %]
-            </div>
+      <div class="left-column">
+        <div id="photo">
+          <img src="data:image/jpeg;base64,[% BUFFER %]" alt="Your Photo" />
         </div>
-        <div class="right-column">
+        <div id="name">[% NAME %]</div>
 
-            <h1>Employment</h1>
-            <div id="employment">
-                [% EMPLOYMENT %]
-            </div>
+        <div id="aboutme">[% ABOUTME %]</div>
 
-            <br>
+        <div id="adress">[% ADRESS %]</div>
+        <div id="email">[% EMAIL %]</div>
+        <div id="phone">[% PHONE %]</div>
+        <div id="links">[% LINKS %]</div>
+      </div>
+      <div class="right-column">
+        <h1>Employment</h1>
+        <div id="employment">[% EMPLOYMENT %]</div>
 
-            <h1>Education</h1>
-            <div id="education">
-                [% EDUCATION %]
-            </div>
+        <br />
 
-            <br>
-        </div>
+        <h1>Education</h1>
+        <div id="education">[% EDUCATION %]</div>
+
+        <br />
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

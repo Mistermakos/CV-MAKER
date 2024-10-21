@@ -1,32 +1,32 @@
 body {
-    font-family: 'Verdana';
-    width: 100%;
-    margin: 0;
+  font-family: "Verdana";
+  width: 100%;
+  margin: 0;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    font-size: 130%;
-    width: 100%;
-    height: 150px;
-    background-color: #6831ff;
-    color: white;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  font-size: 130%;
+  width: 100%;
+  height: 150px;
+  background-color: #6831ff;
+  color: white;
+  flex-direction: column;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 hr {
-    margin-top: 60px;
-    width: 730px;
-    color: #6831ff;
+  margin-top: 60px;
+  width: 730px;
+  color: #6831ff;
 }
 
 #basic-info,
@@ -36,396 +36,398 @@ hr {
 .education-added,
 #box-summary,
 #links {
-    display: flex;
-    justify-content: space-around;
-    width: 800px;
-    margin: 40px;
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  margin: 40px;
 }
 
 #drop-area {
-    width: 100px;
-    height: 135px;
-    padding: 30px;
-    margin-top: 20px;
-    background: #fff;
-    text-align: center;
-    /*border-radius: 20px; */
-    border: 2px solid #bbb5ff;
-    background-color: #f7f8ff;
-    background-position: center;
-    background-size: cover;
+  width: 100px;
+  height: 135px;
+  padding: 30px;
+  margin-top: 20px;
+  background: #fff;
+  text-align: center;
+  /*border-radius: 20px; */
+  border: 2px solid #bbb5ff;
+  background-color: #f7f8ff;
+  background-position: center;
+  background-size: cover;
 }
 
 #drop-area img {
-    width: 100px;
+  width: 100px;
 }
 
 #first-last-name span {
-    display: block;
-    margin-bottom: 11px;
+  display: block;
+  margin-bottom: 11px;
 }
 
 #first-last-name h2,
 #contact h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 #first-last-name input {
-    width: 200px;
-    font-size: 15px;
-    height: 40px;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #6831ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+  width: 200px;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #6831ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
 #first-last-name input::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #contact {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact input {
-    width: 175px;
-    font-size: 15px;
-    height: 40px;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #6831ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+  width: 175px;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #6831ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
 #contact input::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #contact img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 #employment,
 .employment-added,
 .education,
 .education-added {
-    display: flex;
-    justify-content: left;
-    margin-bottom: -2px;
+  display: flex;
+  justify-content: left;
+  margin-bottom: -2px;
 }
 
 .employment-added,
 .education-added {
-    margin-top: -30px;
+  margin-top: -30px;
 }
 
 #company,
 #institution {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 11px;
-    margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 11px;
+  margin-left: 35px;
 }
 
 #company-span,
 #company-span-added,
 #education-span,
 #education-span-added {
-    margin-bottom: 11px;
+  margin-bottom: 11px;
 }
 
 #company-span-added,
 #education-span-added {
-    margin-top: 69px;
+  margin-top: 69px;
 }
 
 #company input,
 #company-added input,
 #institution input {
-    width: 250px;
-    font-size: 15px;
-    height: 40px;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #6831ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+  width: 250px;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #6831ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
 #company input::placeholder,
 #company-added input::placeholder,
 #institution input::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
-input[type=date] {
-    width: 120px;
-    font-size: 15px;
-    height: 40px;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #6831ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+input[type="date"] {
+  width: 120px;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #6831ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
-input[type=date]::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+input[type="date"]::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #start-end-date {
-    margin-top: 69px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
+  margin-top: 69px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
 }
 
 #responsibilities,
 #qualifications {
-    margin-top: 70px;
-    margin-left: 50px;
+  margin-top: 70px;
+  margin-left: 50px;
 }
 
 #responsibilities textarea,
 #qualifications textarea,
 #aboutMe textarea {
-    width: 235px;
-    font-size: 15px;
-    height: 134px;
-    padding: 5px;
-    margin-top: 11px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #6831ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
-    resize: none;
+  width: 235px;
+  font-size: 15px;
+  height: 134px;
+  padding: 5px;
+  margin-top: 11px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #6831ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+  resize: none;
 }
 
 #responsibilities textarea:focus,
 #qualifications textarea:focus,
 #aboutMe textarea:focus {
-    border-bottom-color: #6831ff;
+  border-bottom-color: #6831ff;
 }
 
 #responsibilities textarea::placeholder,
 #qualifications textarea::placeholder,
 #aboutMe textarea::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #box-edu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #box-emp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #add-btn {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #add-btn button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    width: 50px;
-    height: 50px;
-    padding: 20px;
-    background-color: #6831ff;
-    font-size: 20px;
-    color: white;
-    border: 2px solid #bbb5ff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  background-color: #6831ff;
+  font-size: 20px;
+  color: white;
+  border: 2px solid #bbb5ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
 #add-btn button:hover {
-    background-color: #5528cc;
-    transform: scale(1.1);
+  background-color: #5528cc;
+  transform: scale(1.1);
 }
 
 #add-btn button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 #add-btn button:focus {
-    outline: none;
+  outline: none;
 }
 
 #aboutMe span {
-    display: block;
+  display: block;
 }
 
 .submit-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 40px;
-    margin-top: 20px;
-    background-color: #6831ff;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: #6831ff;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .submit-btn:hover {
-    background-color: #5028cc;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #5028cc;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .submit-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .employment-added.show,
 .education-added.show {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .pulsate {
-    animation: pulsate 1.5s ease forwards;
+  animation: pulsate 1.5s ease forwards;
 }
 
 @keyframes pulsate {
-    0% {
-        transform: scale(0.9);
-    }
+  0% {
+    transform: scale(0.9);
+  }
 
-    50% {
-        transform: scale(1.1);
-    }
+  50% {
+    transform: scale(1.1);
+  }
 
-    100% {
-        transform: scale(0.9);
-    }
+  100% {
+    transform: scale(0.9);
+  }
 }
 
 .social-media {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .checkboxes {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .checkbox-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .checkbox-item input[type="text"] {
-    width: 175px;
-    font-size: 15px;
-    height: 40px;
-    padding: 5px;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #6831ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
+  width: 175px;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #6831ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
 .checkbox-item input[type="text"]::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .checkbox-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 #photo-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 30px;
-    font-weight: bold;
-    margin-top: 125px;
-    background-color: #6831ff;
-    color: white;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 30px;
+  font-weight: bold;
+  margin-top: 125px;
+  background-color: #6831ff;
+  color: white;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 #photo-input input[type="file"] {
-    display: none;
+  display: none;
 }
 
 #photo-input label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    font-size: 14px;
-    padding: 5px;
-    background-color: #6831ff;
-    color: white;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid transparent;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  padding: 5px;
+  background-color: #6831ff;
+  color: white;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 #photo-input label:hover {
-    background-color: #5028cc;
-    color: #ffeb3b;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #5028cc;
+  color: #ffeb3b;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #photo-input label:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
