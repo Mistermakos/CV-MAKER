@@ -32,9 +32,7 @@ const cvCreate = async (req, res) => {
   // Editing template
   try {
     const photo = req.file.buffer.toString("base64");
-    console.log(photo);
     const data = req.body;
-    console.log(data);
     fileText = await fs.readFile(file, "utf8", (data) => {
       return data;
     });
